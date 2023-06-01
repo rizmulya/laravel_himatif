@@ -25,7 +25,7 @@ class PengurusController extends Controller
      */
     public function create()
     {
-        return view('akun.create');
+        return view('pengurus.create');
     }
 
     /**
@@ -40,9 +40,21 @@ class PengurusController extends Controller
             'nama_pengurus' => 'required',
             'jabatan' => 'required',
             'katakata' => 'required',
+            'foto_pengurus'=> 'required',
         ]);
-        Pengurus::create($request->all());
-        return redirect()->route('pengurus.index')->with('success','Berhasil Menambahkan Aspirasi');
+
+        $file = $request->file('foto_pengurus');
+        $nama_file = time() . "_" . $file->getClientOriginalName();
+
+        $tujuan_upload = 'data_file/pengurus';
+        $file->move($tujuan_upload, $nama_file);
+        Pengurus::create([
+            'nama_pengurus' => $request->nama_pengurus,
+            'jabatan' => $request->jabatan,
+            'katakata' => $request->katakata,
+            'foto_pengurus' => $nama_file,
+        ]);
+        return redirect()->route('pengurus.index')->with('success','Berhasil Menambahkan Pengurus');
     }
 
     /**
@@ -81,6 +93,7 @@ class PengurusController extends Controller
             'nama_pengurus' => 'required',
             'jabatan' => 'required',
             'katakata' => 'required',
+            'foto_pengurus' => $nama_file,
         ]);
 
         $pengurus->update($request->all());

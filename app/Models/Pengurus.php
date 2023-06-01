@@ -14,6 +14,6 @@ class Pengurus extends Model
 
     //tambahkan kode berikut
     protected $fillable = [
-        'nama_pengurus', 'jabatan', 'katakata'
+        'nama_pengurus', 'jabatan', 'katakata', 'foto_pengurus'
     ];
 }

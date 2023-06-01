@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nama_pengurus');
             $table->string('jabatan');
             $table->text('katakata');
+            $table->string('foto_pengurus');
             $table->timestamps();
         });
     }
