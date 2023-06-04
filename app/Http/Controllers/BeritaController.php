@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Berita;
+
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -13,8 +13,7 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $beritas = Berita::latest()->paginate(20);
-        return view('berita.index',compact('beritas'))->with('i', (request()->input('page',1)-1) * 20);
+        //
     }
 
     /**
@@ -24,7 +23,7 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        return view('berita.create');
+        //
     }
 
     /**
@@ -35,26 +34,7 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'judul_berita' => 'required',
-            'deskripsi' => 'required',
-            'foto_berita' => 'required',
-            'tanggal_rilis' => 'required',
-        ]);
-
-        $file = $request->file('foto_berita');
-        $nama_file = time() . "_" . $file->getClientOriginalName();
-
-        $tujuan_upload = 'data_file';
-        $file->move($tujuan_upload, $nama_file);
-        Berita::create([
-            'judul_berita' => $request->judul_berita,
-            'deskripsi' => $request->deskripsi,
-            'tanggal_rilis' => $request->tanggal_rilis,
-            'foto_berita' => $nama_file,
-        ]);
-        return redirect()->route('berita.index')
-            ->with('success', 'Berita Berhasil Ditambahkan.');
+        //
     }
 
     /**
