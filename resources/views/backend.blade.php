@@ -26,6 +26,10 @@
   <link href="{{asset('backend/assets')}}/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="{{asset('backend/assets')}}/vendor/simple-datatables/style.css" rel="stylesheet">
 
+  <!-- Font Awesome Css -->
+  <link href="{{asset('fontaws')}}/css/fontawesome.css" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/css/brands.css" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/css/solid.css" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="{{asset('backend/assets')}}/css/style.css" rel="stylesheet">
 
@@ -467,7 +471,7 @@
 
   <main id="main" class="main">
 
-    <div class="pagetitle">
+    <!-- <div class="pagetitle">
       <h1>Blank Page</h1>
       <nav>
         <ol class="breadcrumb">
@@ -476,7 +480,8 @@
           <li class="breadcrumb-item active">Blank</li>
         </ol>
       </nav>
-    </div><!-- End Page Title -->
+    </div> -->
+    <!-- End Page Title -->
 
     <section class="section">
         @yield('content')
@@ -496,7 +501,8 @@
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
+  <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

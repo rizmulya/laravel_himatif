@@ -1,7 +1,7 @@
 @extends('backend')
 @section('content')
 <div class="card mb-4">
-    <div class="card-header"><i class="fas fa-table mr-1"></i>Data Aspirasi Infortika</div>
+    <div class="card-header"><i class="fas fa-table mr-1"></i> Data Aspirasi Informatika</div>
     <div class="card-body">
     <div class="table-responsive">
             @if ($message = Session::get('success'))
@@ -9,7 +9,6 @@
                 <p>{{ $message }}</p>
             </div>
         @endif
-
 
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
