@@ -3,6 +3,7 @@
 <div class="card mb-4">
     <div class="card-header"><i class="fas fa-table mr-1"></i>Berita Informatika</div>
     <div class="card-body">
+        <br>
     <div class="table-responsive">
             @if ($message = Session::get('success'))
             <div class="alert alert-success">
@@ -20,6 +21,7 @@
                 <th>Deskripsi</th>
                 <th>Tanggal Rilis</th>
                 <th width="150px">Foto Berita</th>
+                <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -30,6 +32,14 @@
             <td>{{ $berita->deskripsi}}</td>
             <td>{{ $berita->tanggal_rilis}}</td>
             <td><img width="150px" align="center" src="{{url('/data_file/'.$berita->foto_berita) }}"></td>
+            <td width="105px">
+            <form action="{{ route('berita.destroy', $berita->id_berita) }}" method="post">
+            @csrf
+            @method('delete')
+            <a class="btn btn-warning" href="{{ route('berita.edit', $berita->id_berita) }}"><i class="fa-regular fa-pen-to-square"></i></a>
+            <button type="submit" class="btn btn-danger" onclick="javascript: return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fa-solid fa-trash"></i></button>
+            </form>
+            </td>
         </tr>
         @endforeach
     </tbody>
