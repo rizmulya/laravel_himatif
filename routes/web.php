@@ -28,7 +28,12 @@ Route::post('/logins', [App\Http\Controllers\UserController::class, 'authenticat
 Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout']);
 
 Route::resource('aspirasi', \App\Http\Controllers\AspirasiController::class);
+
+//Router Berita
 Route::resource('berita', \App\Http\Controllers\BeritaController::class);
+//hapus file berita
+Route::get('/hapus/berita/{id}', [App\Http\Controllers\BeritaController::class,'destroy']);
+
 Route::resource('pengurus', \App\Http\Controllers\PengurusController::class);
 Route::resource('user', \App\Http\Controllers\UserController::class);
 Route::resource('frontpengumuman', \App\Http\Controllers\FrontpengumumanController::class);

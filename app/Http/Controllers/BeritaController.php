@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Berita;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
+use DB;
 class BeritaController extends Controller
 {
     /**
@@ -27,12 +28,6 @@ class BeritaController extends Controller
         return view('berita.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -56,13 +51,6 @@ class BeritaController extends Controller
         return redirect()->route('berita.index')
             ->with('success', 'Berita Berhasil Ditambahkan.');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
@@ -97,8 +85,16 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Berita $berita)
     {
-        //
+        $deleteBerita = DB::table('berita')->where('id_berita',$berita);
+        return redirect()->route('berita.index')
+                         ->with('success','Berita berhasil dihapus');
+        
+        // Storage::delete('data_file/' . $berita->foto_berita);
+        // $berita->delete();
+        // return redirect()->route('berita.index')
+        //                 ->with('success','Berita berhasil dihapus');
     }
 }
+?>
