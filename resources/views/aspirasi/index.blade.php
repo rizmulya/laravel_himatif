@@ -8,13 +8,15 @@
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
             </div>
-        @endif
-
+            @endif
+    </div>
+    <br>
+    <a class="btn btn-success" href="{{ route('aspirasi.create') }}">Tambah Aspirasi</a>
+    <br><br>
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
         <tr align="center">
-            <th>No</th>
-
+                <th>No</th>
                 <th>Nama Penyalur</th>
                 <th>NIM</th>
                 <th width="20%">Aspirasi</th>
@@ -27,16 +29,16 @@
                 @foreach ($aspirasis as $aspirasi)
                 <tr>
 
-                    <td>{{ ++$i }}</td>
+                    <td style="text-align:center">{{ ++$i }}.</td>
                     <td>{{ $aspirasi->nama_penyalur }}</td>
                     <td>{{ $aspirasi->nim }}</td>
                     <td>{{ $aspirasi->aspirasi }}</td>
-                    <td>
+                    <td style="text-align:center">
                     <form action="{{ route('aspirasi.destroy',$aspirasi->id_aspirasi) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <a class="btn btn-warning" href="{{ route('aspirasi.edit',$aspirasi->id_aspirasi) }}">Ubah</a>
-                    <button type="submit" class="btn btn-danger" onclick="javascript: return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
+                    <a class="btn btn-warning" href="{{ route('aspirasi.edit',$aspirasi->id_aspirasi) }}"><i class="fa-regular fa-pen-to-square"></i></a>
+                    <button type="submit" class="btn btn-danger" onclick="javascript: return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fa-solid fa-trash"></i></button>
                     </form>
                     </td>
                     </tr>

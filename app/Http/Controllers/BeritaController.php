@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use DB;
 class BeritaController extends Controller
 {
@@ -15,7 +16,7 @@ class BeritaController extends Controller
     public function index()
     {
         $beritas = Berita::latest()->paginate(20);
-        return view('berita.index',compact('beritas'))->with('i', (request()->input('page',1)-1) * 20);
+        return view('berita.index',compact('beritas'))->with('i', (request()->input('page',1)-1) * 2);
     }
 
     /**
@@ -33,14 +34,14 @@ class BeritaController extends Controller
         $this->validate($request,[
             'judul_berita' => 'required',
             'deskripsi' => 'required',
-            'foto_berita' => 'required',
-            'tanggal_rilis' => 'required',
+            'foto_berita' => 'required|image|mimes:jpeg,png,jpg|max:5120',
+            'tanggal_rilis' => 'required|date',
         ]);
 
         $file = $request->file('foto_berita');
         $nama_file = time() . "_" . $file->getClientOriginalName();
 
-        $tujuan_upload = 'data_file';
+        $tujuan_upload = 'data_file/berita';
         $file->move($tujuan_upload, $nama_file);
         Berita::create([
             'judul_berita' => $request->judul_berita,
@@ -62,9 +63,9 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Berita $beritum)
     {
-        //
+        return view('berita.edit_berita',compact('beritum'));
     }
 
     /**
@@ -74,9 +75,44 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Berita $beritum)
     {
-        //
+        $request->validate([
+            'judul_berita' => 'required',
+            'deskripsi' => 'required',
+            'tanggal_rilis' => 'required|date',
+        ]);
+        $inputan = $request->all();
+        if($foto = $request->file('foto_berita')){
+            $tujuan = 'data_file/berita';
+            $nama_file = time() . "_" . $foto->getClientOriginalName();
+            $foto->move($tujuan, $nama_file);
+            
+            if(File::exists('data_file/berita/'. $beritum->foto_berita)){
+               File::delete('data_file/berita/'. $beritum->foto_berita);
+            }
+            $inputan['foto_berita'] = "$nama_file";
+        }
+
+        $beritum->update($inputan);
+        if($beritum){
+            return redirect()->route('berita.index')
+                            ->with('success','Berita berhasil di update');
+        }
+        // $foto = Storage::delete($beritum->foto_berita);
+        // $file = $request->file('foto_berita');
+        // $nama_file = time() . "_" . $file->getClientOriginalName();
+
+        // $tujuan_upload = 'data_file';
+        // $file->move($tujuan_upload, $nama_file);
+        // $beritum->update([
+        //     'judul_berita' => $request->judul_berita,
+        //     'deskripsi' => $request->deskripsi,
+        //     'tanggal_rilis' => $request->tanggal_rilis,
+        //     'foto_berita' => $nama_file,
+        // ]);
+        // return redirect()->route('berita.index')
+        //                 ->with('success','Berita berhasil dirubah');
     }
 
     /**
@@ -85,16 +121,16 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Berita $berita)
+    public function destroy(Berita $beritum)
     {
-        $deleteBerita = DB::table('berita')->where('id_berita',$berita);
-        return redirect()->route('berita.index')
-                         ->with('success','Berita berhasil dihapus');
-        
-        // Storage::delete('data_file/' . $berita->foto_berita);
-        // $berita->delete();
+        // $deleted = DB::table('berita')->where('id_berita', $beritum)->delete();
         // return redirect()->route('berita.index')
-        //                 ->with('success','Berita berhasil dihapus');
+        //                  ->with('success','Berita berhasil dihapus');
+
+        Storage::delete('data_file/' . $beritum->foto_berita);
+        $beritum->delete();
+        return redirect()->route('berita.index')
+                        ->with('success','Berita berhasil dihapus');
     }
 }
 ?>

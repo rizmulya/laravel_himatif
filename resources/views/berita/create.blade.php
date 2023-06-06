@@ -1,4 +1,5 @@
-@extends('backend') @section('content') <div class="container-fluid">
+@extends('backend') @section('content') 
+<div class="container-fluid">
     <h1 class="mt-4">Berita Informatika</h1>
     <div class="card mb-4">
         <div class="card-header"><i class="fas fa-edit mr-1"></i>Berita Informatika</div>
@@ -43,4 +44,5 @@
         <button type="submit" class="btn btn-success">Submit</button>
     </div>
     </form> 
+</div>    
     @endsection
