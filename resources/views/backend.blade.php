@@ -331,11 +331,6 @@
             </a>
           </li>
           <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Testimoni Alumni</span>
-            </a>
-          </li>
-          <li>
             <a href="components-carousel.html">
               <i class="bi bi-circle"></i><span>Agenda Kegiatan</span>
             </a>
@@ -359,8 +354,14 @@
               <i class="bi bi-circle"></i><span>Berita</span>
             </a>
           </li>
+          <li>
             <a href="components-cards.html">
               <i class="bi bi-circle"></i><span>Visi Misi</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-badges.html">
+              <i class="bi bi-circle"></i><span>Testimoni Alumni</span>
             </a>
           </li>
           <li>

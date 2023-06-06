@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pengurus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PengurusController extends Controller
 {
@@ -40,7 +41,7 @@ class PengurusController extends Controller
             'nama_pengurus' => 'required',
             'jabatan' => 'required',
             'katakata' => 'required',
-            'foto_pengurus'=> 'required',
+            'foto_pengurus'=> 'required|image|mimes:jpeg,png,jpg|max:5120',
         ]);
 
         $file = $request->file('foto_pengurus');
@@ -74,10 +75,9 @@ class PengurusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pengurus $pengurus)
+    public function edit(Pengurus $penguru)
     {
-        $penguruss = Pengurus::latest()->paginate(20);
-        return view('pengurus.edit',compact('penguruss','pengurus'));
+        return view('pengurus.edit',compact('penguru'));
     }
 
     /**
@@ -87,30 +87,42 @@ class PengurusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Pengurus $pengurus)
+    public function update(Request $request,Pengurus $penguru)
     {
         $request->validate([
             'nama_pengurus' => 'required',
             'jabatan' => 'required',
             'katakata' => 'required',
-            'foto_pengurus' => $nama_file,
         ]);
+        $inputan = $request->all();
+        if($foto = $request->file('foto_pengurus')){
+            $tujuan = 'data_file/pengurus';
+            $nama_file = time() . "_" . $foto->getClientOriginalName();
+            $foto->move($tujuan, $nama_file);
+            
+            if(File::exists('data_file/pengurus/'. $penguru->foto_pengurus)){
+               File::delete('data_file/pengurus/'. $penguru->foto_pengurus);
+            }
+            $inputan['foto_pengurus'] = "$nama_file";
+        }
 
-        $pengurus->update($request->all());
-        return redirect()->route('pengurus.index')
-                        ->with('success','Data berhasil dirubah');
+        $penguru->update($inputan);
+        if($penguru){
+            return redirect()->route('pengurus.index')
+                            ->with('success','Pengurus berhasil di update');
+        }else{
+            return redirect()->route('pengurus.index')
+                            ->with('success','Pengurus gagal di update');
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Pengurus $pengurus)
-    {
-        $pengurus->delete();
+    public function destroy(Pengurus $penguru)
+    {  
+        if(File::exists('data_file/pengurus/'. $penguru->foto_pengurus)){
+            File::delete('data_file/pengurus/'. $penguru->foto_pengurus);
+         }
+        $penguru->delete();
         return redirect()->route('pengurus.index')
-                        ->with('success','Data berhasil dihapus');
+                        ->with('success','Pengurus berhasil dihapus');
     }
 }

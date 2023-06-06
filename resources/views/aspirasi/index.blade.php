@@ -11,7 +11,7 @@
             @endif
     </div>
     <br>
-    <a class="btn btn-success" href="{{ route('aspirasi.create') }}">Tambah Aspirasi</a>
+    <a class="btn btn-success" href="{{ route('aspirasi.create') }}">Tambah Aspirasi <i class="fas fa-plus"></i></a>
     <br><br>
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>

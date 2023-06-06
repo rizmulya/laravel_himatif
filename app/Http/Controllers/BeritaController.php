@@ -127,7 +127,9 @@ class BeritaController extends Controller
         // return redirect()->route('berita.index')
         //                  ->with('success','Berita berhasil dihapus');
 
-        Storage::delete('data_file/' . $beritum->foto_berita);
+        if(File::exists('data_file/berita/'. $beritum->foto_berita)){
+            File::delete('data_file/berita/'. $beritum->foto_berita);
+         }
         $beritum->delete();
         return redirect()->route('berita.index')
                         ->with('success','Berita berhasil dihapus');

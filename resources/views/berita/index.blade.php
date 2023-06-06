@@ -10,7 +10,7 @@
                 <p>{{ $message }}</p>
             </div>
         @endif
-    <a class="btn btn-success" href="{{ route('berita.create') }}"> Tambah Berita </a>
+    <a class="btn btn-success" href="{{ route('berita.create') }}"> Tambah Berita <i class="fas fa-plus"></i></a>
     <br><br>
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
