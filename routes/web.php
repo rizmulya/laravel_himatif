@@ -33,6 +33,9 @@ Route::resource('aspirasi', \App\Http\Controllers\AspirasiController::class);
 Route::resource('berita', \App\Http\Controllers\BeritaController::class);
 //hapus file berita
 Route::get('/hapus/berita/{id}', [App\Http\Controllers\BeritaController::class,'destroy']);
+//update file berita
+Route::get('/ubah/berita/{id}', [App\Http\Controllers\BeritaController::class,'update']);
+
 
 Route::resource('pengurus', \App\Http\Controllers\PengurusController::class);
 Route::resource('user', \App\Http\Controllers\UserController::class);

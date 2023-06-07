@@ -26,10 +26,31 @@
   <link href="{{asset('backend/assets')}}/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="{{asset('backend/assets')}}/vendor/simple-datatables/style.css" rel="stylesheet">
 
+  <!-- Font Awesome CSS V4.7.0 -->
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <!-- Font Awesome Css -->
   <link href="{{asset('fontaws')}}/css/fontawesome.css" rel="stylesheet">
   <link href="{{asset('fontaws')}}/css/brands.css" rel="stylesheet">
   <link href="{{asset('fontaws')}}/css/solid.css" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/css/regular.css" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/css/svg-with-js.css" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/css/all.css" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/css/all.min.css" rel="stylesheet">
+
+  <!-- Font Awesome JS -->
+  <link href="{{asset('fontaws')}}/js/all.js" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/js/all.min.js" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/js/brands.js" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/js/conflict-detention.js" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/js/regular.js" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/js/solid.js" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/js/fontawesome.js" rel="stylesheet">
+
+  <!-- Font Awesome Fonts -->
+  <link href="{{asset('fontaws')}}/webfonts/fa-brands-400.tts" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/webfonts/fa-reguler-400.tts" rel="stylesheet">
+  <link href="{{asset('fontaws')}}/webfonts/fa-solid-900.tts" rel="stylesheet">
+
   <!-- Template Main CSS File -->
   <link href="{{asset('backend/assets')}}/css/style.css" rel="stylesheet">
 
@@ -310,11 +331,6 @@
             </a>
           </li>
           <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Testimoni Alumni</span>
-            </a>
-          </li>
-          <li>
             <a href="components-carousel.html">
               <i class="bi bi-circle"></i><span>Agenda Kegiatan</span>
             </a>
@@ -333,13 +349,19 @@
             </a>
           </li>
           <li>
+          <li>
+            <a href="{{route('berita.index')}}">
+              <i class="bi bi-circle"></i><span>Berita</span>
+            </a>
+          </li>
+          <li>
             <a href="components-cards.html">
               <i class="bi bi-circle"></i><span>Visi Misi</span>
             </a>
           </li>
           <li>
-            <a href="{{route('berita.index')}}">
-              <i class="bi bi-circle"></i><span>Berita</span>
+            <a href="components-badges.html">
+              <i class="bi bi-circle"></i><span>Testimoni Alumni</span>
             </a>
           </li>
           <li>

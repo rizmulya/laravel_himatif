@@ -10,8 +10,8 @@
                 <p>{{ $message }}</p>
             </div>
         @endif
-    <br>
-    <a class="btn btn-success" href="{{ route('berita.create') }}"> Tambah Berita </a><br><br>
+    <a class="btn btn-success" href="{{ route('berita.create') }}"> Tambah Berita <i class="fas fa-plus"></i></a>
+    <br><br>
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
         <tr align="center">
@@ -31,7 +31,7 @@
             <td>{{ $berita->judul_berita}}</td>
             <td>{{ $berita->deskripsi}}</td>
             <td>{{ $berita->tanggal_rilis}}</td>
-            <td><img width="150px" align="center" src="{{url('/data_file/'.$berita->foto_berita) }}"></td>
+            <td><img width="150px" align="center" src="{{url('/data_file/berita/'.$berita->foto_berita) }}"></td>
             <td width="105px">
             <form action="{{ route('berita.destroy', $berita->id_berita) }}" method="post">
             @csrf
@@ -47,5 +47,5 @@
         </div>
     </div>
 </div>
-
+<!-- {!! $beritas->links() !!} -->
 @endsection

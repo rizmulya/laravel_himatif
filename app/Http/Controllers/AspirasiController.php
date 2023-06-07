@@ -24,7 +24,7 @@ class AspirasiController extends Controller
      */
     public function create()
     {
-        return view('akun.create');
+        return view('aspirasi.create_aspirasi');
     }
 
     /**
@@ -81,7 +81,6 @@ class AspirasiController extends Controller
             'nim' => 'required',
             'aspirasi' => 'required',
         ]);
-      
         $aspirasi->update($request->all());
         return redirect()->route('aspirasi.index')
                         ->with('success','Data berhasil dirubah');

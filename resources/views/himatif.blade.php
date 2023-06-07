@@ -313,15 +313,16 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <p>Pengurus HIMATIF</p>
+          <p>Struktur Organisasi</p>
         </header>
 
         <div class="entry-img">
-            <center><img src="{{asset('frontend/assets')}}/img/pengurus.jpeg" alt="" class="img-fluid" width="900"></center>
+            <center><img src="{{asset('data_file')}}/himatif.png" alt="" class="img-fluid" width="900"></center>
         </div>
-
-
-        <!-- <div class="row gy-4">
+        <br>
+        <br>
+        <br>
+         <div class="row gy-4">
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
@@ -507,8 +508,8 @@
 
    
 
-    <!-- ======= Services Section ======= -->
-    {{-- <section id="services" class="services">
+    <!-- ======= Layanan Himatif ======= -->
+    <!-- <section id="services" class="services">
 
       <div class="container" data-aos="fade-up">
 
@@ -576,10 +577,11 @@
 
       </div>
 
-    </section><!-- End Services Section --> --}}
+    </section> -->
+    <!-- End Layanan Himatif --> --}}
 
 
-    <!-- ======= Portfolio Section ======= -->
+    <!-- ======= Mahasiswa Berprestasi ======= -->
     <section id="portfolio" class="portfolio">
 
       <div class="container" data-aos="fade-up">
@@ -647,10 +649,11 @@
 
       </div>
 
-    </section><!-- End Portfolio Section -->
+    </section>
+    <!-- End Mahasiswa Berprestasi -->
 
     <!-- ======= Testimonials Section ======= -->
-    {{-- <section id="testimonials" class="testimonials">
+     <section id="testimonials" class="testimonials">
 
       <div class="container" data-aos="fade-up">
 
@@ -691,7 +694,8 @@
                   <h4>Alumni Teknik Informatik UCIC 2022</h4>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
+            <!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -707,7 +711,8 @@
                   <h4>Store Owner</h4>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
+            <!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -723,7 +728,8 @@
                   <h4>Freelancer</h4>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
+            <!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -739,7 +745,8 @@
                   <h4>Entrepreneur</h4>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            <!-- End testimonial item -->
 
           </div>
           <div class="swiper-pagination"></div>
@@ -747,11 +754,12 @@
 
       </div>
 
-    </section><!-- End Testimonials Section --> --}}
+    </section>
+    <!-- End Testimonials Section -->
 
     
 
-    <!-- ======= Clients Section ======= -->
+    <!-- ======= Mitra Kolaborasi ======= -->
     <!-- <section id="clients" class="clients">
 
       <div class="container" data-aos="fade-up">
@@ -773,7 +781,7 @@
     <!-- End Clients Section -->
 
     <!-- ======= Recent Blog Posts Section ======= -->
-    {{-- <section id="recent-blog-posts" class="recent-blog-posts">
+    <!-- <section id="recent-blog-posts" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
 
@@ -814,7 +822,8 @@
 
       </div>
 
-    </section><!-- End Recent Blog Posts Section --> --}}
+    </section> -->
+    <!-- End Recent Blog Posts Section --> 
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -854,15 +863,14 @@
                   <p>himatif@cic.ac.id</p>
                 </div>
               </div>
-              <div class="col-md-6">
+              <!-- <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-clock"></i>
                   <h3>Jam Kerja</h3>
                   <p>Senin - Sabtu<br>9:00AM - 05:00PM</p>
                 </div>
-              </div>
+              </div> -->
             </div>
-
           </div>
 
           <div class="col-lg-6">
@@ -903,9 +911,6 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-
-
-
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
@@ -962,14 +967,14 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Himatif</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="#">Himatif</a>
       </div>
     </div>
   </footer><!-- End Footer -->
