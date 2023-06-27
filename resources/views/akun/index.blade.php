@@ -1,5 +1,6 @@
 @extends('backend')
 @section('content')
+<h2 class="main-title">Halaman Akun</h2>
 <div class="card mb-4">
     <div class="card-header"><i class="fas fa-table mr-1"></i>Data Akun Admin</div>
     <div class="card-body">
@@ -9,8 +10,9 @@
                 <p>{{ $message }}</p>
             </div>
             @endif
+            <br>
             <a class="btn btn-success" href="{{ route('user.create') }}">Tambah Data Akun</a>
-
+            <br><br>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr align="center">

@@ -360,7 +360,7 @@
             </a>
           </li>
           <li>
-            <a href="components-badges.html">
+            <a href="{{route('testimoni.index')}}">
               <i class="bi bi-circle"></i><span>Testimoni Alumni</span>
             </a>
           </li>

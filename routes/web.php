@@ -18,9 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', function () {
-    return view('login');
+    return view('backendnew');
 });
-Route::view('/user', 'users');
+Route::get('/admins',function(){
+    return view('backend');
+});
 
 //login
 Route::get('/login', [App\Http\Controllers\UserController::class, 'index'])->name('login')->middleware('guest');
@@ -36,10 +38,11 @@ Route::get('/hapus/berita/{id}', [App\Http\Controllers\BeritaController::class,'
 //update file berita
 Route::get('/ubah/berita/{id}', [App\Http\Controllers\BeritaController::class,'update']);
 
-
+//resources
 Route::resource('pengurus', \App\Http\Controllers\PengurusController::class);
 Route::resource('user', \App\Http\Controllers\UserController::class);
 Route::resource('frontpengumuman', \App\Http\Controllers\FrontpengumumanController::class);
 Route::resource('frontberita', \App\Http\Controllers\FrontberitaController::class);
 Route::resource('frontkegiatan', \App\Http\Controllers\FrontkegiatanController::class);
 Route::resource('himatif', \App\Http\Controllers\HimatifController::class);
+Route::resource('testimoni', \App\Http\Controllers\TestimoniController::class);

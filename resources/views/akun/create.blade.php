@@ -1,13 +1,9 @@
 @extends('backend')
 @section('content')
 <div class="container-fluid">
-<h1 class="mt-4">Tambah Peminjaman Buku</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Tambah Akun Admin</li>
-    </ol>
-                        
+<h1 class="mt-4">Akun Admin</h1>
 <div class="card mb-4">
-    <div class="card-header"><i class="fas fa-edit mr-1"></i>Akun Admin</div>
+    <div class="card-header"><i class="fas fa-edit mr-1"></i>Tambah Akun Admin</div>
     <div class="card-body">
    
 @if ($errors->any())

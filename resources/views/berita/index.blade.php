@@ -1,9 +1,9 @@
-@extends('backend')
-@section('content')
+@extends('backendnew')
+@section('konten')
+{{-- <h2 class="main-title">Halaman Berita</h2> --}}
 <div class="card mb-4">
     <div class="card-header"><i class="fas fa-table mr-1"></i>Berita Informatika</div>
     <div class="card-body">
-        <br>
     <div class="table-responsive">
             @if ($message = Session::get('success'))
             <div class="alert alert-success">
@@ -11,7 +11,7 @@
             </div>
         @endif
     <a class="btn btn-success" href="{{ route('berita.create') }}"> Tambah Berita <i class="fas fa-plus"></i></a>
-    <br><br>
+    <p style="margin-top:20px"></p>
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
         <tr align="center">

@@ -1,7 +1,6 @@
-@extends('backend') @section('content') 
+@extends('backendnew') @section('konten') 
 <div class="container-fluid">
-    <h1 class="mt-4">Berita Informatika</h1>
-    <div class="card mb-4">
+    <div class="card mb-1">
         <div class="card-header"><i class="fas fa-edit mr-1"></i>Berita Informatika</div>
         <div class="card-body"> @if($errors->any()) <div class="alert alert-danger">
                 <strong>Whoops!</strong> There were some problems with your input.<br><br>

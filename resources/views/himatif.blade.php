@@ -60,8 +60,6 @@
           <li><a class="nav-link scrollto active" href="{{route('frontpengumuman.index')}}">Pengumuman</a></li>
           <li><a class="nav-link scrollto active" href="{{route('frontberita.index')}}">Berita</a></li>
           <li><a class="nav-link scrollto active" href="#hero">E-Voting</a></li>
-
-
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -71,7 +69,6 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
-
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
@@ -91,7 +88,6 @@
         </div>
       </div>
     </div>
-
   </section><!-- End Hero -->
 
   <main id="main">

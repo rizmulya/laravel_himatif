@@ -26,7 +26,7 @@ class UserController extends Controller
         ]);
         if(Auth::attempt($credential)){
             $request->session()->regenerate();
-            return view('backend');
+            return view('backendnew');
         }
         return back()->with('Login Error','Login Gagal');
     }
